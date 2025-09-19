@@ -1,0 +1,98 @@
+@use "components/all.module.scss";
+@use "colors.module.scss";
+body {
+  background-color: colors.$primary-black;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  list-style: none;
+}
+	.wrapper {
+		box-sizing: border-box;
+
+			@media(min-width: 320px) and (max-width:768px) {
+				margin:  0 auto;
+				width: 17.5rem;
+
+					.search__loupeIcon {
+						left: 1rem;
+					}
+					.content{
+						display: grid;
+						grid-template-columns:  repeat(1, 1fr);
+
+						.img__block {
+							width: 17.5rem;
+							height: 11.5rem;
+
+							.img__header {
+							  height: 45px;
+								width: 14.75rem;
+
+								&__title, &__titlehover {border-left: none;}
+
+								h3 {font-size: 0.75rem;}
+								h4 {font-size: 0.5rem;}
+
+
+							}
+					}
+					}
+			}
+
+			@media(min-width: 768px) and (max-width: 1024px) {
+				margin: 0 auto;
+				width: 45.5rem;
+
+					.content{
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						gap: 1.5rem;
+						.img__block {
+							width: 22rem;
+							height: 13.75rem;
+
+							.img__header {
+								height: 66px;
+								.img__header__title,.img__header__titlehover	 {
+									border-left: none;
+									height: 66px;
+								}
+							}
+
+						}
+				}
+			}
+
+			@media (min-width: 1024px) and (max-width:1280px)   {
+				padding-inline: 1.25rem;
+				margin: 0 auto;
+
+			}
+
+			@media  (min-width: 1281px) and (max-width: 1440px) {
+				//width: 77.5rem ;
+				padding-inline: 6.25rem;
+				margin: 0 auto;
+			}
+
+			@media(min-width: 1441px)  {
+						margin: 0 auto;
+						max-width: 77.5rem;
+				}
+}
+
+	[data-theme] {
+	* {
+		transition: all .3s ;
+	}
+}
+
+	[data-theme = "light"] {
+		body {
+			background-color: colors.$primary-white;
+		}
+
+	}

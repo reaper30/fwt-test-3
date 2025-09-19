@@ -1,0 +1,140 @@
+@use "../colors.module.scss";
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+	gap: 2rem;
+	margin-bottom: 2.5rem;
+}
+
+.img__block {
+  position: relative;
+	overflow: hidden;
+	height: 16.25rem;
+	width: 24.5rem;
+
+	& img {
+		height: 16.24rem	;
+		width: 24.5rem;
+
+	}
+
+	&:hover img {
+		transform: scale(1.05);
+		transition: transform .5s ;
+	}
+
+	&:hover .img__header__title{
+		transform: translateY(2rem);
+		opacity: 0;
+		border-left: none;
+		}
+
+		&:hover .img__header__titlehover {
+			opacity: 1;
+			transform: translate(0);
+		}
+
+
+  .img__header {
+    position: absolute;
+    background-color: colors.$primary-black;
+    display: flex;
+		align-items: center;
+    width: 18.75rem;
+    height: 5rem;
+    bottom: 0;
+		left: 0;
+
+    &__title {
+      display: flex;
+			flex-direction: column;
+			justify-content: center;
+      border-left: 0.125rem solid colors.$accent-gold;
+      padding: 0 1.25rem;
+			min-height: 42px;
+			overflow: hidden;
+
+      h3 {
+        color: colors.$primary-light-gray;
+        font-size: 1rem;
+				margin: 0;
+        text-transform: uppercase;
+
+				font-family: "Cormorant", serif;
+				font-optical-sizing: auto;
+				font-weight: 500;
+				font-style: normal;
+      }
+
+      h4 {
+        color: colors.$accent-gold;
+        font-size: 0.75rem;
+        margin: 0;
+        text-transform: uppercase;
+
+				font-family: "Inter", sans-serif;
+				font-optical-sizing: auto;
+				font-weight: 700;
+  			font-style: normal;
+      }
+    }
+
+		&__titlehover {
+      display: flex;
+			position: absolute;
+			opacity: 0;
+			transform: translateX(-2rem);
+			flex-direction: column;
+			justify-content: center;
+      border-left: 0.125rem solid colors.$accent-gold;
+      padding-left:1.25rem;
+			height: 42px;
+      h3 {
+        color: colors.$primary-light-gray;
+        font-size: 1rem;
+				margin: 0;
+        text-transform: uppercase;
+
+				font-family: "Cormorant", serif;
+				font-optical-sizing: auto;
+				font-weight: 500;
+				font-style: normal;
+      }
+
+      h4 {
+        color: colors.$accent-gold;
+        font-size: 0.75rem;
+        margin: 0;
+        text-transform: uppercase;
+
+				font-family: "Inter", sans-serif;
+				font-optical-sizing: auto;
+				font-weight: 700;
+  			font-style: normal;
+      }
+    }
+  }
+}
+
+	[data-theme = "light"] {
+		.img__block {
+				.img__header {
+						background-color: colors.$primary-white;
+
+						&__title, &__titlehover {
+							border-left: 0.125rem solid colors.$accent-red;
+
+							h3 {
+								color: colors.$primary-black;
+							}
+
+							h4 {
+								color: colors.$accent-red;
+							}
+						}
+
+					}
+			}
+	}
