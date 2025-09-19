@@ -16,7 +16,6 @@ const Pagination: React.FC<PaginationProps> = ({
 	onChangePage,
 }) => {
 	const pageCount = Math.ceil(totalPaintings / paintingsPerPage);
-	if (pageCount <= 1) return null; // если страница одна, пагинации нет
 
 	return (
 		<ReactPaginate
