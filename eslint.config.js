@@ -9,11 +9,12 @@ export default antfu({
 	typescript: true, // включаем TypeScript
 	prettier: true, // интеграция Prettier
 	rules: {
-		"no-console": "warn", // предупреждать о console.log
+		"no-console": "warn",
 		"brace-style": "off",
 		"arrow-parens": "off",
 		"style/arrow-parens": "off",
 		"style/no-tabs": "off",
+		"curly": "off"
 	},
 	prettierOptions: {
 		tabWidth: 2,
