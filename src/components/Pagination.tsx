@@ -16,6 +16,8 @@ const Pagination: React.FC<PaginationProps> = ({
 	onChangePage,
 }) => {
 	const pageCount = Math.ceil(totalPaintings / paintingsPerPage);
+	if (pageCount <= 1)
+		return null; // если страница одна, пагинации нет
 
 	return (
 		<ReactPaginate
@@ -23,9 +25,11 @@ const Pagination: React.FC<PaginationProps> = ({
 			breakLabel="..."
 			nextLabel=">"
 			previousLabel="<"
-			onPageChange={e => onChangePage(e.selected + 1)}
+			onPageChange={(e) => onChangePage(e.selected + 1)}
 			pageCount={pageCount}
 			forcePage={currentPage - 1}
+			marginPagesDisplayed={1}
+			pageRangeDisplayed={2}
 		/>
 	);
 };
