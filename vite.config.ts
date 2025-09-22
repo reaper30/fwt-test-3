@@ -4,5 +4,5 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: "/fwt-test-3",
+	base: "/fwt-test-3/",
 });
