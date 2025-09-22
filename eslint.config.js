@@ -14,7 +14,7 @@ export default antfu({
 		"arrow-parens": "off",
 		"style/arrow-parens": "off",
 		"style/no-tabs": "off",
-		"curly": "off"
+		"curly": "off",
 	},
 	prettierOptions: {
 		tabWidth: 2,
