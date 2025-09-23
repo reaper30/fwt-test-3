@@ -18,7 +18,7 @@ const ImgBlock: React.FC<ImgBlockProps> = ({
 	return (
 		<>
 			<div className={styles.img__block} key={paintings.id}>
-				<img alt="" src={paintings.imageUrl} />
+				<img alt="" src={`${import.meta.env.BASE_URL}${paintings.imageUrl}`} />
 				<div className={styles.img__header}>
 					<div className={styles.img__header__title}>
 						<h3>{paintings.name}</h3>

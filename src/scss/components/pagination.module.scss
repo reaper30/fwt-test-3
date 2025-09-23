@@ -1,77 +1,74 @@
 @use "../colors.module.scss";
 
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.625rem;
+}
+li {
+	display: inline-block;
 
-	.root {
+	a {
 		display: flex;
+		text-align: center;
+		width: 1.5rem;
+		height: 1.5rem;
+		cursor: pointer;
+		color: colors.$primary-light-gray;
 		justify-content: center;
 		align-items: center;
-		gap: 0.625rem;
+		//border-bottom: 1px solid transparent;
+		transition:
+			box-shadow 0.2s ease,
+			font-weight 0.2s ease;
 
+		font-size: 1rem;
+		font-family: "Inter", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
 	}
-	li {
-    display: inline-block;
 
-    a {
-      display: flex;
-      text-align: center;
-      width: 1.5rem;
-      height: 1.5rem;
-      cursor: pointer;
-			color: colors.$primary-light-gray;
-			justify-content: center;
-			align-items: center;
-			//border-bottom: 1px solid transparent;
-			    transition: box-shadow 0.2s ease, font-weight 0.2s ease;
+	&:hover {
+		a {
+			//border-bottom: 1px solid $primary-dark-gray;
+			box-shadow: 0 2px 0 0 colors.$primary-dark-gray;
 
 			font-size: 1rem;
 			font-family: "Inter", sans-serif;
 			font-optical-sizing: auto;
-			font-weight: 300;
+			font-weight: 500;
 			font-style: normal;
-    }
+		}
+	}
+}
 
-    &:hover {
-      a {
-				//border-bottom: 1px solid $primary-dark-gray;
-				      box-shadow: 0 2px 0 0 colors.$primary-dark-gray;
+:global {
+	.selected {
+		a {
+			border-radius: 0.25rem;
+			background-color: colors.$secondary-black;
+			color: colors.$primary-light-gray;
 
+			font-family: "Inter", sans-serif;
+			font-optical-sizing: auto;
+			font-weight: 500;
+			font-style: normal;
+		}
+	}
+}
 
-				font-size: 1rem;
-				font-family: "Inter", sans-serif;
-				font-optical-sizing: auto;
-				font-weight: 500;
-				font-style: normal;
-
-      }
-    }
-  }
-
-		:global {
-
-			.selected {
-				a {
-					border-radius: 0.25rem;
-					background-color: colors.$secondary-black;
-					color: colors.$primary-light-gray;
-
-					font-family: "Inter", sans-serif;
-					font-optical-sizing: auto;
-					font-weight: 500;
-					font-style: normal;
-				}
-			}
+[data-theme="light"] {
+	:global {
+		a {
+			color: colors.$primary-dark-gray;
 		}
 
-		[data-theme = "light"] {
-			:global {
-					a {
-						color: colors.$primary-dark-gray;
-					}
-
-				.selected {
-					a {
-						background-color: rgba(18, 18, 18, 0.05);
-					}
-				}
+		.selected {
+			a {
+				background-color: rgba(18, 18, 18, 0.05);
 			}
 		}
+	}
+}

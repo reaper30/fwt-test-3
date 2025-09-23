@@ -1,9 +1,9 @@
 {
 	"name": "fwt-test3",
-	"homepage": "https://reaper30.github.io/fwt-test-3/",
 	"type": "module",
 	"version": "0.0.0",
 	"private": true,
+	"homepage": "https://reaper30.github.io/fwt-test-3/",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
@@ -11,8 +11,7 @@
 		"lint:fix": "eslint --fix",
 		"format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
 		"preview": "vite preview",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist"
+		"deploy": "npm run build && gh-pages -d dist"
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^5.89.0",

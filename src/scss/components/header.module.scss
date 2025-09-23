@@ -1,47 +1,45 @@
 @use "../colors.module.scss";
 
 .header {
-  display: flex;
-  height: 5rem;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	height: 5rem;
+	justify-content: center;
+	align-items: center;
 	box-sizing: border-box;
 
-  .container {
-    display: flex;
+	.container {
+		display: flex;
 		justify-content: space-between;
-    width: 100%;
-    max-width: 100vw;
-    align-items: center;
+		width: 100%;
+		max-width: 100vw;
+		align-items: center;
+	}
 
-  }
+	&__theme {
+		display: flex;
+		justify-content: center;
+		color: colors.$primary-light-gray;
+		background-color: colors.$secondary-black;
+		padding: 0.5rem 0.5rem;
+		border-radius: 100%;
 
-  &__theme {
-    display: flex;
-    justify-content: center;
-    color: colors.$primary-light-gray;
-    background-color: colors.$secondary-black;
-    padding: 0.5rem 0.5rem;
-    border-radius: 100%;
-
-    &:hover {
-      cursor: pointer;
-      background: #1b1b1b;
-      border-radius: 100%;
-    }
-  }
+		&:hover {
+			cursor: pointer;
+			background: #1b1b1b;
+			border-radius: 100%;
+		}
+	}
 }
 
-[data-theme = "light"] {
+[data-theme="light"] {
 	.header {
-			&__theme {
+		&__theme {
 			color: colors.$primary-black;
 			background-color: colors.$secondary-white;
 
 			&:hover {
-				background: #f3f3f3 ;
-				}
+				background: #f3f3f3;
 			}
 		}
 	}
-
+}
