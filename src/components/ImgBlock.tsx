@@ -18,22 +18,20 @@ const ImgBlock: React.FC<ImgBlockProps> = ({
 	return (
 		<>
 			<div className={styles.img__block} key={paintings.id}>
-				<img alt="" src={`${import.meta.env.BASE_URL}${paintings.imageUrl}`} />
+				<img src={`${import.meta.env.BASE_URL}${paintings.imageUrl}`} />
 				<div className={styles.img__header}>
 					<div className={styles.img__header__title}>
-						<h3>{paintings.name}</h3>
-						<h4>{paintings.created}</h4>
+						<p>{paintings.name}</p>
+						<p>{paintings.created}</p>
 					</div>
 					<div className={styles.img__header__titlehover}>
-						<h3>
-							{authorsData.find((a) => a.id === paintings.authorId)?.name}
-						</h3>
-						<h4>
+						<p>{authorsData.find((a) => a.id === paintings.authorId)?.name}</p>
+						<p>
 							{
 								locationsData.find((l) => l.id === paintings.locationId)
 									?.location
 							}
-						</h4>
+						</p>
 					</div>
 				</div>
 			</div>

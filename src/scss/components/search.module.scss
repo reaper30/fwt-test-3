@@ -3,80 +3,75 @@
 .search {
 	margin: 2.75rem 0 1.25rem 0;
 	box-sizing: border-box;
-
-
-	&__container {
-		display: flex;
-  	justify-content: flex-end;
-		align-items: end;
-  	position: relative;
-	}
-
-  &__input,
-  &__inputfilled {
-    width: 21.25rem;
-    border-radius: 0.25rem;
-    padding: 0.525rem 3rem;
-    border: 1px solid colors.$primary-black;
-    background-color: colors.$secondary-black;
-		box-sizing: border-box;
-    color: colors.$primary-light-gray;
-
-		font-size: 0.875rem;
-		font-family: "Inter", sans-serif;
-  	font-optical-sizing: auto;
-  	font-weight: 300;
-  	font-style: normal;
-  }
-
-  &__input:focus {
-    border: 1px solid colors.$primary-light-gray;
-  }
-
-	&__inputfilled {
-		outline: none;
-	}
-
-
-  &__loupeIcon {
-    position: absolute;
-    color: colors.$primary-light-gray;
-    width: 1.25rem;
-    height: 1.25rem;
-    top: 25%;
-    right: 19rem;
-  }
-
-	&__clearIcon {
-		position: absolute;
-		color: colors.$primary-light-gray;
-		top: 30%;
-		right: 1rem;
-		width: 1rem;
-		height: 1rem;
-		cursor: pointer;
-	}
 }
 
-	[data-theme = "light"] {
-		.search {
-				&__input {
-					background-color: colors.$primary-white;
-					border: 1px solid colors.$primary-light-gray;
-					color: colors.$primary-dark-gray;
+.search__container {
+	display: flex;
+	justify-content: flex-end;
+	align-items: end;
+	position: relative;
+}
 
-				}
-				&__inputfilled {
-					background-color: colors.$primary-white;
-					color: colors.$primary-dark-gray;
-					border: 1px solid colors.$primary-light-gray;
-				}
+.search__input,
+.search__inputfilled {
+	width: 21.25rem;
+	border-radius: 0.25rem;
+	padding: 0.525rem 3rem;
+	border: 1px solid colors.$primary-black;
+	background-color: colors.$secondary-black;
+	box-sizing: border-box;
+	color: colors.$primary-light-gray;
 
-				&__loupeIcon {
-					color: colors.$primary-dark-gray;
-				}
-				&__clearIcon {
-					color: colors.$primary-dark-gray;
-				}
-		}
+	font-size: 0.875rem;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.search__inputfilled:focus {
+	border: 1px solid colors.$primary-light-gray;
+}
+
+.search__inputfilled {
+	outline: none;
+}
+
+.search__loupeIcon {
+	position: absolute;
+	color: colors.$primary-light-gray;
+	width: 1.25rem;
+	height: 1.25rem;
+	top: 25%;
+	right: 19rem;
+}
+
+.search__clearIcon__clearIcon {
+	position: absolute;
+	color: colors.$primary-light-gray;
+	top: 30%;
+	right: 1rem;
+	width: 1rem;
+	height: 1rem;
+	cursor: pointer;
+}
+
+[data-theme="light"] {
+	.search__input {
+		background-color: colors.$primary-white;
+		border: 1px solid colors.$primary-light-gray;
+		color: colors.$primary-dark-gray;
 	}
+	.search__inputfilled {
+		background-color: colors.$primary-white;
+		color: colors.$primary-dark-gray;
+		border: 1px solid colors.$primary-light-gray;
+	}
+
+	.search__loupeIcon {
+		color: colors.$primary-dark-gray;
+	}
+	.search__clearIcon {
+		color: colors.$primary-dark-gray;
+	}
+}

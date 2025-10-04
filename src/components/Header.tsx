@@ -16,12 +16,11 @@ function Header() {
 			if (saved === "light" || saved === "dark") {
 				return saved;
 			}
-		}
-		catch (error) {
+		} catch (error) {
 			console.error(error);
 		}
-		const prefersLight
-			= window.matchMedia("(prefers-color-scheme: light)")?.matches ?? false;
+		const prefersLight =
+			window.matchMedia("(prefers-color-scheme: light)")?.matches ?? false;
 		return prefersLight ? "light" : "dark";
 	};
 
@@ -31,33 +30,31 @@ function Header() {
 		document.documentElement.setAttribute("data-theme", theme);
 		try {
 			localStorage.setItem("theme", theme);
-		}
-		catch (error) {
+		} catch (error) {
 			console.error(error);
 		}
 	}, [theme]);
 
 	const toggleTheme = () => {
-		setTheme(prev => (prev === "light" ? "dark" : "light"));
+		setTheme((prev) => (prev === "light" ? "dark" : "light"));
 	};
 
 	return (
-		<div className={headerStyles.header}>
+		<header className={headerStyles.header}>
 			<div className={headerStyles.container}>
 				<Link to="/">
-					<div className={headerStyles.container__logo}>
+					<span className={headerStyles.container__logo}>
 						<img
 							src={theme === "dark" ? logo_light : logo_dark}
 							alt="FWT logo"
 						/>
-					</div>
+					</span>
 				</Link>
 				<div className={headerStyles.header__theme} onClick={toggleTheme}>
-					{" "}
 					{theme === "light" ? <Moon /> : <Sun />}
 				</div>
 			</div>
-		</div>
+		</header>
 	);
 }
 
