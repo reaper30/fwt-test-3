@@ -5,6 +5,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 0.625rem;
+	padding: 0;
 }
 
 li {
@@ -12,7 +13,6 @@ li {
 
 	&:hover {
 		a {
-			//border-bottom: 1px solid $primary-dark-gray;
 			box-shadow: 0 2px 0 0 colors.$primary-dark-gray;
 
 			font-size: 1rem;
@@ -22,26 +22,25 @@ li {
 			font-style: normal;
 		}
 	}
-}
+	a {
+		display: flex;
+		text-align: center;
+		width: 1.5rem;
+		height: 1.5rem;
+		cursor: pointer;
+		color: colors.$primary-light-gray;
+		justify-content: center;
+		align-items: center;
+		transition:
+			box-shadow 0.2s ease,
+			font-weight 0.2s ease;
 
-a {
-	display: flex;
-	text-align: center;
-	width: 1.5rem;
-	height: 1.5rem;
-	cursor: pointer;
-	color: colors.$primary-light-gray;
-	justify-content: center;
-	align-items: center;
-	transition:
-		box-shadow 0.2s ease,
-		font-weight 0.2s ease;
-
-	font-size: 1rem;
-	font-family: "Inter", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 300;
-	font-style: normal;
+		font-size: 1rem;
+		font-family: "Inter", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 300;
+		font-style: normal;
+	}
 }
 
 :global {

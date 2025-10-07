@@ -43,7 +43,7 @@ async function getPaintings({
 }
 
 export function usePaintings(query: SearchQuery) {
-	const { data, isFetching } = useQuery({
+	const { data, isFetching, isSuccess } = useQuery({
 		queryKey: ["paintings", query],
 		queryFn: () => getPaintings(query),
 		initialData: { data: [], totalPaintings: 0 },
@@ -52,6 +52,7 @@ export function usePaintings(query: SearchQuery) {
 	return {
 		data,
 		totalPaintings: data.totalPaintings,
+		isSuccess,
 		isFetching,
 	};
 }

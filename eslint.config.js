@@ -10,11 +10,12 @@ export default antfu({
 	prettier: true, // интеграция Prettier
 	rules: {
 		"no-console": "warn",
-		"brace-style": "off",
+		"style/brace-style": ["error", "1tbs", { allowSingleLine: true }],
 		"arrow-parens": "off",
 		"style/arrow-parens": "off",
 		"style/no-tabs": "off",
 		"curly": "off",
+		"spaced-comment": "off",
 	},
 	prettierOptions: {
 		tabWidth: 2,

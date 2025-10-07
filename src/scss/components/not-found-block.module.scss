@@ -1,0 +1,25 @@
+@use "../colors.module.scss";
+
+.root {
+	text-align: center;
+	margin: 10rem;
+
+	h1 {
+		color: colors.$primary-light-gray;
+
+		font-family: "Inter", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 700;
+		font-style: normal;
+	}
+
+	p {
+		font-size: 18px;
+		color: colors.$primary-light-gray;
+
+		font-family: "Inter", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 700;
+		font-style: normal;
+	}
+}

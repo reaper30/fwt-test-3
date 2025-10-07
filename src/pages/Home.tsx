@@ -1,16 +1,18 @@
-import { debounce } from "lodash";
-import { useCallback, useState } from "react";
+import qs from "qs";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import ImgBlock from "../components/ImgBlock";
 import Pagination from "../components/Pagination";
-import SearchItem from "../components/Search";
 import ImgSkeleton from "../components/Skeletons/ImgSkeleton";
 import { useAuthors } from "../hooks/useAuthors";
 import { useLocations } from "../hooks/useLocations";
 import { usePaintings } from "../hooks/usePaintings";
 import styles from "../scss/app.module.scss";
+import { SearchContext } from "../App";
 
 function Home() {
-	const [searchValue, setSearchValue] = useState("");
+	const navigate = useNavigate();
+	const { searchValue } = useContext(SearchContext);
 	const [currentPage, setCurrentPage] = useState(1);
 	const paintingsPerPage = 6;
 
@@ -18,27 +20,28 @@ function Home() {
 		data: paintingsData,
 		totalPaintings,
 		isFetching,
+		isSuccess,
 	} = usePaintings({
 		q: searchValue,
 		currentPage,
 		limit: paintingsPerPage,
 	});
-
 	const { data: authorsData } = useAuthors();
 	const { data: locationsData } = useLocations();
 
-	const updateSearchValue = useCallback(
-		debounce((value: string) => {
-			setSearchValue(value);
-			setCurrentPage(1);
-		}, 250),
-		[],
-	);
+	//useEffect(() => {
+	//	const queryString = qs.stringify({
+	//		q: searchValue,
+	//		currentPage,
+	//	});
+	//	if (isSuccess && paintingsData && paintingsData.data.length === 0) {
+	//		// перенаправить
+	//		navigate("/not-found", { replace: true });
+	//	}
+	//}, []);
 
 	return (
 		<>
-			<SearchItem updateSearchValue={updateSearchValue} />
-
 			<div className={styles.container}>
 				<div className={styles.content}>
 					{isFetching
@@ -55,14 +58,16 @@ function Home() {
 							))}
 				</div>
 			</div>
-			<div className="pagination">
-				<Pagination
-					currentPage={currentPage}
-					totalPaintings={totalPaintings}
-					paintingsPerPage={paintingsPerPage}
-					onChangePage={(number) => setCurrentPage(number)}
-				/>
-			</div>
+			{isSuccess && (
+				<div className="pagination">
+					<Pagination
+						currentPage={currentPage}
+						totalPaintings={totalPaintings}
+						paintingsPerPage={paintingsPerPage}
+						onChangePage={(number) => setCurrentPage(number)}
+					/>
+				</div>
+			)}
 		</>
 	);
 }

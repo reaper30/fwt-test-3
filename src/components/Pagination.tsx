@@ -17,6 +17,10 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
 	const pageCount = Math.ceil(totalPaintings / paintingsPerPage);
 
+	if (!totalPaintings || pageCount === 0) {
+		return null;
+	}
+
 	return (
 		<ReactPaginate
 			className={styles.root}

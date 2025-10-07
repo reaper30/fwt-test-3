@@ -1,8 +1,10 @@
 import ContentLoader from "react-content-loader";
+import styles from "../../scss/app.module.scss";
 
 function ImgSkeleton() {
 	return (
 		<ContentLoader
+			className={styles.img__block}
 			speed={3}
 			width={392}
 			height={260}

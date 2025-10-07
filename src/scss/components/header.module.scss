@@ -1,28 +1,38 @@
 @use "../colors.module.scss";
 
 .header {
-	display: flex;
-	height: 5rem;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
+	//height: 5rem;
+	padding: 2rem 0;
+	//display: flex;
+	//align-items: center;
 }
 
-.container {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	max-width: 100vw;
-	align-items: center;
+.header__container {
+	//display: flex;
+	//justify-content: space-between;
+	//width: 100%;
+	//align-items: center;
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 2fr);
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+.header__logo {
+	align-self: center;
 }
 
 .header__theme {
-	display: flex;
-	justify-content: center;
 	color: colors.$primary-light-gray;
 	background-color: colors.$secondary-black;
+	justify-self: end;
+	align-self: center;
 	padding: 0.5rem 0.5rem;
 	border-radius: 100%;
+	width: 2.5rem;
+	height: 2.5rem;
 
 	&:hover {
 		cursor: pointer;
